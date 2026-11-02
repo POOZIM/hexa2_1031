@@ -11,4 +11,11 @@
 		ORDER BY emp_id
 	</select>
 
+<!-- 사원 상세 조회 -->
+	<select id="findById" resultType="Emp">
+		SELECT emp_id, ename, email, phone, hiredate, department_id, job_id, hr_position_id,
+			status, annual_leave_days
+		FROM emp
+		WHERE emp_id = #{empId}
+	</select>
 </mapper>

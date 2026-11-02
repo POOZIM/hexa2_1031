@@ -311,7 +311,35 @@ String contextPath = request.getContextPath();
 
 		});
 	</script>
-
+	
+	<script>
+		/* 사원 상세 조회 */
+		const getEmpDetail = await () => {
+			try{
+				//URL 에서 사번 가져오기
+				const empId = window.location.pathname.split("/").pop();
+				
+				const response = await fetch(
+					"${pageContext.request.contextPath}/api/employees/" + empId,
+					{
+						method : "GET"
+					}
+				);
+				
+				if(!response.ok){
+					throw new Error("사원 상세조회 실패");
+				}
+				
+				const result = await response.json();
+				console.log("사원 상세 정보:",result);
+			
+			}catch (error){
+				console.error("사원 상세조회 오류:" , error);
+			}
+		};
+		
+		getEmpDetail();
+	</script>
 
 
 </body>

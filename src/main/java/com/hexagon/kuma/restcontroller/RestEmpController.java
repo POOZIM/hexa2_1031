@@ -2,7 +2,9 @@ package com.hexagon.kuma.restcontroller;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hexagon.kuma.domain.Emp;
@@ -19,10 +21,19 @@ public class RestEmpController {
 	//사원 전체 조회
 	@GetMapping("/api/employees")
 	public List<Emp> findAll(){
-        System.out.println("★★★ REST 사원 조회 실행 ★★★");
-
 
 		return empService.findAll();
 	}
-	
+
+	//사원 상세 조회
+	@GetMapping("/api/employees/{empId}")
+	public ResponseEntity<Emp> findById(@PathVariable int empId){
+		
+		Emp emp = empService.findById(empId);
+		
+		if(emp == null) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(emp);
+	}
 }

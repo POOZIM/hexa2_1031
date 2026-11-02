@@ -19,4 +19,9 @@ public class EmpService {
 	public List<Emp> findAll(){
 		return empMapper.findAll();
 	}
+	
+	//사원 상세 조회
+	public Emp findById(int empId) {
+		return empMapper.findById(empId);
+	}
 }
