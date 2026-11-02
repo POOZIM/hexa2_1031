@@ -9,5 +9,5 @@ public class Department {
 	private int departmentId; 
 	private String departmentCode;
 	private String departmentName;
-	private int is_active;
+	private int isActive;
 }
