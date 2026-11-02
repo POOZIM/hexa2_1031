@@ -343,7 +343,7 @@ document.addEventListener("DOMContentLoaded", function() {
     async function loadEmployees() {
         try {
             const response = await fetch(
-                "${pageContext.request.contextPath}/rest/employees"
+                "${pageContext.request.contextPath}/api/employees"
             );
 
             if (!response.ok) throw new Error("조회 실패");

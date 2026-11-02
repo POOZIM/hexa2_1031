@@ -17,7 +17,7 @@ public class RestEmpController {
 	private final EmpService empService;
 	
 	//사원 전체 조회
-	@GetMapping("/rest/employees")
+	@GetMapping("/api/employees")
 	public List<Emp> findAll(){
         System.out.println("★★★ REST 사원 조회 실행 ★★★");
 

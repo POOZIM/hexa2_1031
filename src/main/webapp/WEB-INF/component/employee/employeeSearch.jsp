@@ -199,7 +199,7 @@
 		async function searchEmployees(){
 			try{
 				const response = await fetch(
-					"${pageContext.request.contextPath}/rest/employees");
+					"${pageContext.request.contextPath}/api/employees");
 				
 				if(!response.ok){
 					throw new Error("검색 실패");
