@@ -6,5 +6,9 @@ import com.hexagon.joo.domain.Department;
 
 @Mapper
 public interface DepartmentMapper {
-   Department select(int departmentId);
+	int nextId(); // 이거 부서 Id 발급할 때 사용하는 id임
+	int insert(Department department);
+
+	Department select(int departmentId);
+
 }

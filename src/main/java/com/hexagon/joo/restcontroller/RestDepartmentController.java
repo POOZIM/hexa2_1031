@@ -19,8 +19,7 @@ public class RestDepartmentController {
 	private final DepartmentService departmentService;
 	
 	@PostMapping("/api/departments")
-	@ResponseBody
-	public String regist(DepartmentDTO departmentDTO) {
+	public String regist(DepartmentDTO departmentDTO) { // @RequestBody 사용해되긴함 (HTTP 요청 본문에 담긴 JSON 등을 Java 객체로 변환할 때 필요한 어노테이션)
 		
 		departmentService.regist(departmentDTO);
 		return "success registing dept";

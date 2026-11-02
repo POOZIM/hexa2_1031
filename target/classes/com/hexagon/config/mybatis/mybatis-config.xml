@@ -8,6 +8,7 @@
 		</settings>
 		
 		<typeAliases>
-			<!-- <typeAlias type="com.hexagon.springmvc.domain.Permission" alias="Permission"/> -->
+			<typeAlias type="com.hexagon.joo.domain.Department" alias="Department"/>
+			<typeAlias type="com.hexagon.joo.domain.Job" alias="Job"/>
 		</typeAliases>
 </configuration>

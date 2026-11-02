@@ -14,8 +14,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 @Configuration//이 클래스는 로직용이 아니라, 빈 설정용이다!
 @ComponentScan(basePackages = {
-		"com.hexagon.springmvc.controller", 
-		"com.hexagon.springmvc.rest.controller", 
+		"com.hexagon.joo.controller", 
+		"com.hexagon.joo.restcontroller", 
 		"com.hexagon.springmvc.common.web"
 })
 public class AppConfig {
@@ -24,7 +24,7 @@ public class AppConfig {
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-		resolver.setPrefix("/WEB-INF/views/");//접두어를 결정 
+		resolver.setPrefix("/WEB-INF/component/");//접두어를 결정 
 		resolver.setSuffix(".jsp");
 		//접미어를 결정
 		return resolver;
