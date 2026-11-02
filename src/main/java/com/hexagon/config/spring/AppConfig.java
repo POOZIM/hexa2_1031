@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /*-------------------------------------------------------------------------------------------------------------------------
@@ -16,18 +18,26 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan(basePackages = {
 		"com.hexagon.springmvc.controller", 
 		"com.hexagon.springmvc.rest.controller", 
-		"com.hexagon.springmvc.common.web"
+		"com.hexagon.springmvc.common.web",
+		"com.hexagon.kuma.controller",
+		"com.hexagon.kuma.restcontroller"
 })
-public class AppConfig {
+
+public class AppConfig implements WebMvcConfigurer{
 	//스프링 컨테이너가 보유할 빈들의 목록을 어노테이션으로 등록하자
 	
+	//건들지마 건들면 뒤짐
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-		resolver.setPrefix("/WEB-INF/views/");//접두어를 결정 
+		resolver.setPrefix("/WEB-INF/component/");//접두어를 결정 
+		
 		resolver.setSuffix(".jsp");
 		//접미어를 결정
 		return resolver;
+	}
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/component/css/");
 	}
 }
 

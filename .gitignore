@@ -5,3 +5,8 @@
 
 target/
 **/pom.properties
+
+target/
+.settings/
+.classpath
+pom.properties
