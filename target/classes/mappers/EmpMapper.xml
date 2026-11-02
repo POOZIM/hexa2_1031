@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hexagon.kuma.mapper.EmpMapper">
+
+
+<!-- 사원 전체 조회 -->
+	<select id="findAll" resultType="Emp">
+		SELECT emp_id, ename, email, phone, hiredate, department_id, job_id, hr_position_id,
+			status, annual_leave_days
+		FROM emp
+		ORDER BY emp_id
+	</select>
+
+</mapper>

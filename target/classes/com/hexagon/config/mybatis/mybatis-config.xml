@@ -9,5 +9,7 @@
 		
 		<typeAliases>
 			<!-- <typeAlias type="com.hexagon.springmvc.domain.Permission" alias="Permission"/> -->
+			<typeAlias type="com.hexagon.kuma.domain.Emp" alias="Emp"/>
+			
 		</typeAliases>
 </configuration>
